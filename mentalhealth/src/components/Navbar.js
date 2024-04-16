@@ -1,5 +1,6 @@
 import React from 'react';
 import Icon from "../Assets/images/logo white.png"
+import { Outlet,Link } from 'react-router-dom';
 
 const Navbar = ({ icon }) => {
   return (
@@ -12,16 +13,18 @@ const Navbar = ({ icon }) => {
         </div>
         {/* Navbar Items */}
         <div className="text-white mr-4">
-          <a href="#" className="mr-4">Home</a>
-          <a href="#">About us</a>
+          <Link to="/" className="mr-4">Home</Link>
+          <Link to="/" >About us</Link>
         </div>
       </div>
       {/* Right Section */}
       <div>
         {/* Get Started Button */}
+        <Link to={"/sign-up"}>
         <button className="text-black px-4 py-2 shadow-md" style={{ backgroundColor: '#FFDC5F', borderRadius: '30px'}}>
           Get Started
         </button>
+        </Link>
       </div>
     </nav>
   );
