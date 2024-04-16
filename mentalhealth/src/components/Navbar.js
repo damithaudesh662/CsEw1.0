@@ -2,7 +2,7 @@ import React from 'react';
 import Icon from "../Assets/images/logo white.png"
 import { Outlet,Link } from 'react-router-dom';
 
-const Navbar = ({ icon }) => {
+const Navbar = () => {
   return (
     <nav className="fixed top-0 w-full p-4 flex justify-between items-center z-10 h-20" style={{ backgroundColor: '#388697', fontFamily:'Raleway', fontWeight:'600' }}>
       {/* Left Section */}
