@@ -1,15 +1,14 @@
+import { useState } from "react"
+
 export default function Example() {
+    const [buttonColor,setButtonColor] = useState("#388697");
+
     return (
       <>
         <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 mt-20">
           <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-            <img
-              className="mx-auto h-10 w-auto"
-              src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-              alt="Your Company"
-            />
             <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-              Let's Get Started
+              Welcome Back
             </h2>
           </div>
   
@@ -57,7 +56,10 @@ export default function Example() {
               <div>
                 <button
                   type="submit"
-                  className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  className="flex w-full justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  style={{backgroundColor: buttonColor, }}
+                  onMouseEnter={()=>{setButtonColor("#388689")}}
+                  onMouseLeave={()=>{setButtonColor("#388697")}}
                 >
                   Sign in
                 </button>

@@ -1,9 +1,9 @@
-import Signup from "../components/Signup";
+import Register from "../components/Register";
 import DisplayComponentForTime from "./DisplayComponentForTime";
 import Animation from "./Animation";
 import Navbar from "../components/Navbar";
 
-const SignupPage = () => {
+const RegisterPage = () => {
   return (
     <div>
       <DisplayComponentForTime
@@ -11,9 +11,9 @@ const SignupPage = () => {
         displayTime={2000} // Time in milliseconds
       />
       <Navbar />
-      <Signup />
+      <Register />
     </div>
   );
 };
 
-export default SignupPage;
+export default RegisterPage;
