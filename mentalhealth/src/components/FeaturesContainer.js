@@ -1,4 +1,8 @@
 import FeatureCard from "./FeatureCard";
+import JournalIcon from "../Assets/images/journal.png";
+import ChatIcon from "../Assets/images/chat.png";
+import PlayIcon from "../Assets/images/youtube.png"
+import SmileIcon from "../Assets/images/gestures.png"
 
 const FeaturesContainer = () => {
   return (
@@ -12,10 +16,11 @@ const FeaturesContainer = () => {
           height: "50vh",
         }}
       >
-        <FeatureCard title={"Journal Space"}/>
-        <FeatureCard title={"Mood Track"}/>
-        <FeatureCard title={<span dangerouslySetInnerHTML={{__html: "External<br />Resources"}} />} />
-        <FeatureCard title={"Chatbot"}/>
+        <FeatureCard title={"Journal Space"} img={JournalIcon}/>
+        <FeatureCard title={"Mood Track"} img={SmileIcon}/>
+        <FeatureCard title={<span dangerouslySetInnerHTML={{__html: "External<br />Resources"}} />} img={PlayIcon} />
+        <FeatureCard title={"Chatbot"} img={ChatIcon}/>
+
       </div>
     </div>
   );
