@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const query = require("./queries/mongoquery");
 
 const app = express();
 
@@ -11,9 +12,7 @@ app.use(cors({
 }))
 
 app.post("/api",(req,res)=>{
-    const email = req.body.email;
-    console.log(email);
-    res.send("Recieved");
+    query.checkUser(req,res);
 })
 
 app.get("/",(req,res)=>{

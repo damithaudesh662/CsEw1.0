@@ -1,9 +1,12 @@
 import { useState } from "react";
-import axios from 'axios';
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function Example() {
   const [buttonColor, setButtonColor] = useState("#388697");
   const [loading, setLoading] = useState(false); // Can be used for display loading status
+  const [isCorrectPwd, setIsCorrectPwd] = useState(true);
+  let navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -12,17 +15,22 @@ export default function Example() {
 
     setLoading(true);
     try {
-      const response = await axios.post("/api", {
+      const response = await axios.post("http://localhost:5000/api", {
         email: email,
         password: password,
       });
 
-      console.log(response);
       setLoading(false);
+
+      if (response.data.correct) {
+        navigate("/dashboard");
+      } else {
+        navigate("/sign-up");
+        setIsCorrectPwd(false);
+      }
     } catch (error) {
       console.error(error);
     }
-
   };
 
   return (
@@ -100,6 +108,12 @@ export default function Example() {
               </button>
             </div>
           </form>
+
+          {isCorrectPwd ? null : (
+            <p className="mt-4 text-center text-sm text-red-500">
+              Incorrect Password
+            </p>
+          )}
 
           <p className="mt-10 text-center text-sm text-gray-500">
             Not a member?{" "}
