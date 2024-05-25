@@ -11,7 +11,7 @@ const FeatureCard = (props) => {
       <p className="text-2xl self-start mt-10" style={{ fontFamily: "Bree Serif" }}>
         {props.title}
       </p>
-      <img src="/path/to/your/gif.gif" alt="Animated GIF" />
+      <img className="object-contain h-28 mb-8" src={props.img}  alt="Animated GIF" />
     </div>
   );
 };

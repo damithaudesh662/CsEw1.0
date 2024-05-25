@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar";
 
 import Icon from "../Assets/images/logo black.png"
 import Footer from "../components/Footer";
+import Conversation from "../components/Conversation";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       />
       <Navbar />
       <IntroCard />
+      <Conversation/>
       <div className = "grid grid-cols-2 mt-20">
         <p className="text-2xl mt-10 ml-10 self-start" style={{fontFamily: "Bree Serif"}}>Frankly we know how you feel...</p>
         <div className="flex mt-10">
