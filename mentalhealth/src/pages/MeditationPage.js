@@ -9,10 +9,10 @@ const MeditationPage = () => {
   const [selfMedPressed, setsSelfMedPressed] = useState(false);
   return (
     <div>
-      {/* <DisplayComponentForTime
+      <DisplayComponentForTime
         component={<Animation />}
         displayTime={2000} // Time in milliseconds
-      /> */}
+      />
       <div className="container flex items-center justify-between pl-4 pr-4 pt-4 gap-x-4">
         <button
           className="w-2/5 bg-yellow-300 hover:bg-yellow-400 text-black py-2 px-8 rounded-3xl"
