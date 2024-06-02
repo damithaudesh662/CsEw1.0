@@ -8,6 +8,13 @@ import classNames from "classnames";
 
 const MeditationPage = () => {
   const [selfMedPressed, setSelfMedPressed] = useState(false);
+  const [selfMedKey, setSelfMedKey] = useState(0); // used to force re-render the self meditation page when the button is clicked in meditationtimer
+
+  const handleSelfMedClick = () => {
+    setSelfMedPressed(true);
+    setSelfMedKey((prevKey) => prevKey + 1);
+  };
+
   return (
     <div>
       <DisplayComponentForTime
@@ -29,12 +36,12 @@ const MeditationPage = () => {
             "w-2/5 py-2 px-8 rounded-3xl bg-yellow-300 hover:bg-yellow-400",
             selfMedPressed ? "text-black" : "text-gray-600"
           )}
-          onClick={() => setSelfMedPressed(true)}
+          onClick={handleSelfMedClick}
         >
           Self meditation
         </button>
       </div>
-      {selfMedPressed ? <SelfMedPage /> : <VideoMedPage />}
+      {selfMedPressed ? <SelfMedPage key={selfMedKey} /> : <VideoMedPage />}
       <Footer />
     </div>
   );

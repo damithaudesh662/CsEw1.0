@@ -11,6 +11,7 @@ const SelfMedPage = () => {
   const [image, setImage] = useState(1);
   const [duration, setDuration] = useState(2);
   const [started, setStarted] = useState(false);
+  const [timerFinished, setTimerFinished] = useState(false);
 
   const icons = [Icon0, Icon1, Icon2, Icon3, Icon4];
   const currentIcon = icons[image];
@@ -31,9 +32,18 @@ const SelfMedPage = () => {
     setStarted(true);
   };
 
+  const handleTimerFinish = () => {
+    setStarted(false);
+    setTimerFinished(true);
+  };
+
   if (started) {
     return (
-      <MeditationTimer duration={duration} backgroundImage={currentIcon} />
+      <MeditationTimer
+        duration={duration}
+        backgroundImage={currentIcon}
+        onTimerFinish={handleTimerFinish}
+      />
     );
   }
 
