@@ -1,7 +1,7 @@
 const FeatureCard = (props) => {
   return (
     <div
-      className="grid grid-cols-1 shadow-md justify-items-center items-center"
+      className="grid grid-cols-1 shadow-md justify-items-center items-center "
       style={{
         height: "80%",
         backgroundColor: "#D6EADF",

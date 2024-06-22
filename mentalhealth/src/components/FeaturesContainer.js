@@ -22,7 +22,7 @@ const FeaturesContainer = () => {
         <FeatureCard title={"Chatbot"} img={ChatIcon}/>
 
       </div>
-    </div>
+    </div> 
   );
 };
 
